@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Kelvin to Fahrenheit</title>
+        <script>
+            const kelvin = 293;   //variable created by const stores fixed value
+            let celsius = kelvin - 273;     //since celsius is 273 less than kelvin therefore we have created variable celsius with let that stores changeble value
+            let fahrenheit = Math.round(celsius * (9/5) + 32);    //we have used Math.round to round off the result of the expression
+            fahrenheit=Math.floor(fahrenheit);    //here we have stored the integer value of fahrenheit to the fahrenheit
+            console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);   //we have output the result using string evaluation
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
