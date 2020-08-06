@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Stone,Paper and Scissors</title>
+    <script>
+      const getUserChoice = (userInput) => {
+        userInput = userInput.toLowerCase();
+        if (
+          userInput === 'rock' ||
+          userInput === 'paper' ||
+          userInput === 'scissors' ||
+          userInput === 'bomb'
+        ) {
+          return userInput;
+        } else {
+          console.log('not a valid choice');
+        }
+      };
+
+      function getComputerChoice() {
+        switch (Math.floor(Math.random() * 3)) {
+          case 0:
+            return 'rock';
+            break;
+          case 1:
+            return 'scissors';
+            break;
+          case 2:
+            return 'paper';
+            break;
+        }
+      }
+
+      function determineWinner(userChoice, computerChoice) {
+        if (userChoice === computerChoice) {
+          return "It's a tie!";
+        } else if (userChoice === 'rock') {
+          if (computerChoice === 'paper') {
+            return 'Computer wins!';
+          } else {
+            return 'You win!';
+          }
+        } else if (userChoice === 'paper') {
+          if (compterChoice === 'scissors') {
+            return 'Computer wins!';
+          } else {
+            return 'You win!';
+          }
+        } else if (userChoice === 'scissors') {
+          if (computerChoice === 'rock') {
+            return 'Computer wins!';
+          } else {
+            return 'You win!';
+          }
+        } else if (userChoice === 'bomb') {
+          return 'You win!';
+        }
+      }
+
+      function playGame() {
+        var userChoice = getUserChoice('rock');
+        var computerChoice = getComputerChoice();
+        console.log(`you threw ${userChoice}`);
+        console.log(`computer threw ${computerChoice}`);
+        console.log(determineWinner(userChoice, computerChoice));
+      }
+      playGame();
+    </script>
+  </head>
+</html>
